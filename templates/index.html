@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to TruSupply</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+  <div class="min-h-screen flex flex-col justify-center items-center px-4 py-10">
+    <div class="max-w-3xl text-center">
+      <h1 class="text-4xl font-extrabold text-indigo-700 mb-4">🚀 Welcome to TruSupply</h1>
+      <p class="text-lg text-gray-700 mb-6">
+        TruSupply is your smart partner for evaluating and monitoring supplier risk performance.
+        Gain insights, make informed decisions, and strengthen your supply chain with real-time risk analysis.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center">
+        <a href="{{ url_for('dashboard') }}" class="bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-amber-600 transition">
+          📊 View Supplier Dashboard
+        </a>
+        <a href="{{ url_for('add_supplier') }}" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition">
+          ➕ Evaluate New Supplier
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

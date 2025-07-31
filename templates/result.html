@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Evaluation Result | TruSupply</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans flex items-center justify-center h-screen">
+  <div class="bg-gray-800 p-10 rounded-lg shadow-lg text-center max-w-md w-full">
+    <h1 class="text-3xl font-extrabold text-amber-400 mb-4">📋 Evaluation Result</h1>
+    <p class="text-lg mb-6">The supplier has a calculated <span class="font-bold text-amber-300">risk score</span> of:</p>
+
+    <div class="text-5xl font-extrabold mb-4 text-white">
+      {{ risk_score }}%
+    </div>
+
+    <div class="mb-6">
+      {% if risk_score >= 65 %}
+        <p class="text-red-500 font-semibold">⚠️ High Risk Supplier</p>
+      {% elif risk_score >= 45 %}
+        <p class="text-yellow-400 font-semibold">⚠ Medium Risk Supplier</p>
+      {% else %}
+        <p class="text-green-400 font-semibold">✅ Low Risk Supplier</p>
+      {% endif %}
+    </div>
+
+    <a href="{{ url_for('dashboard') }}" class="inline-block mt-4 text-sm text-amber-400 hover:underline">📊 View Dashboard</a><br>
+    <a href="{{ url_for('home') }}" class="inline-block mt-2 text-sm text-amber-400 hover:underline">← Back to Home</a>
+  </div>
+</body>
+</html>

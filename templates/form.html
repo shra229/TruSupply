@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Evaluate New Supplier | TruSupply</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+  <div class="max-w-3xl mx-auto px-6 py-8">
+    <h1 class="text-3xl font-extrabold text-indigo-700 mb-6 text-center">➕ Evaluate New Supplier</h1>
+
+    <form method="POST" action="{{ url_for('submit') }}" class="space-y-6 bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+      <div>
+        <label class="block text-sm font-medium mb-1" for="supplier_id">Supplier ID</label>
+        <input type="text" id="supplier_id" name="supplier_id" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Optional">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="supplier_name">Supplier Name</label>
+        <input type="text" id="supplier_name" name="supplier_name" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Enter name">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="category">Category</label>
+        <select id="category" name="category" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          <option value="Raw Materials">Raw Materials</option>
+          <option value="Packaging">Packaging</option>
+          <option value="Technology">Technology</option>
+          <option value="Logistics">Logistics</option>
+          <option value="Machinery">Machinery</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="location">Location</label>
+        <input type="text" id="location" name="location" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Enter location">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-1" for="compliance">Compliance Score (%)</label>
+          <input type="number" name="compliance" min="0" max="100" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="financial">Financial Score (%)</label>
+          <input type="number" name="financial" min="0" max="100" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="delivery">On-Time Delivery Rate (%)</label>
+          <input type="number" name="delivery" min="0" max="100" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="bg-indigo-600 text-white font-semibold px-6 py-2 rounded hover:bg-indigo-700 transition duration-300">Submit Supplier Evaluation</button>
+      </div>
+    </form>
+
+    <div class="mt-6 text-center">
+      <a href="{{ url_for('home') }}" class="text-indigo-600 hover:underline text-sm">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
